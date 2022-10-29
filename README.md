@@ -33,7 +33,6 @@ To set defaultNetwork in your hardhat.config.ts file to 'hardhat'
 yarn
 npx hardhat help
 npx hardhat test
-REPORT_GAS=true npx hardhat test
 npx hardhat run scripts/deployMuzaToken.ts
 ```
 
