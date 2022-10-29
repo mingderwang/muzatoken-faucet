@@ -4674,6 +4674,11 @@ ws@^7.4.6:
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.9.tgz"
   integrity sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==
 
+xdeployer@^1.1.24:
+  version "1.1.24"
+  resolved "https://registry.yarnpkg.com/xdeployer/-/xdeployer-1.1.24.tgz#ea507e94488405f8b2f1fabb78b5e99948d771a7"
+  integrity sha512-LoB9BCP6ChEC/zXQY8IYvu5XNxJmNYGbcRFRFEqYezHCbx03aQwPvEZwO5QKJ26zqbqt7vHB803qLp3YLwJZKQ==
+
 xmlhttprequest@1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc"

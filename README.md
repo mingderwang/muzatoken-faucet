@@ -96,3 +96,133 @@ Successfully verified contract MuzaToken on Etherscan.
 https://mumbai.polygonscan.com/address/0x33825f022Dce205EE3554023412be6D0C809c3E7#code
 ```
 
+## multiple network deployment (xdeployer)
+
+```shell
+$ npx hardhat xdeploy                                      
+Generating typings for: 8 artifacts in dir: typechain-types for target: ethers-v5
+Successfully generated 46 typings!
+Compiled 7 Solidity files successfully
+
+The deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!
+
+Your deployment parameters will lead to the following contract address: 0x8A1976539880A5E8E1A820233BD41ca7BBee69f5
+
+=> If this does not match your expectation, given a previous deployment, you have either changed the value of
+the salt parameter or the bytecode of the contract!
+
+
+----------------------------------------------------------
+><><><><           XDEPLOY DEPLOYMENT 1           ><><><><
+----------------------------------------------------------
+
+Deployment status: successful
+
+Network: hardhat
+
+Chain ID: 31337
+
+Contract name: MuzaToken
+
+Contract creation transaction: 0x90c820acb91da78f3a142c056d6ab4a30db0f9d97b2e3a4912b2f067af84e64b
+
+Contract address: 0x8A1976539880A5E8E1A820233BD41ca7BBee69f5
+
+Transaction details written to: /Users/ming/src/HH/muzatoken-faucet/deployments/hardhat_deployment.json
+
+
+Your deployment parameters will lead to the following contract address: 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6
+
+=> If this does not match your expectation, given a previous deployment, you have either changed the value of
+the salt parameter or the bytecode of the contract!
+
+
+----------------------------------------------------------
+><><><><           XDEPLOY DEPLOYMENT 2           ><><><><
+----------------------------------------------------------
+
+Deployment status: successful
+
+Network: goerli
+
+Chain ID: 5
+
+Contract name: MuzaToken
+
+Contract creation transaction hash: https://goerli.etherscan.io/tx/0xb74674fb43e8de1315e2369fb7d3744b6e843db20b2d0d9ced402940f1d46235
+
+Contract address: https://goerli.etherscan.io/address/0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6
+
+Transaction details written to: /Users/ming/src/HH/muzatoken-faucet/deployments/goerli_deployment.json
+
+
+Your deployment parameters will lead to the following contract address: 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6
+
+=> If this does not match your expectation, given a previous deployment, you have either changed the value of
+the salt parameter or the bytecode of the contract!
+
+
+----------------------------------------------------------
+><><><><           XDEPLOY DEPLOYMENT 3           ><><><><
+----------------------------------------------------------
+
+Deployment status: successful
+
+Network: mumbai
+
+Chain ID: 80001
+
+Contract name: MuzaToken
+
+Contract creation transaction hash: https://mumbai.polygonscan.com/tx/0x0b0ddab8e0a4ad8b82547e9befd996d071ea5a8e9705f3ae0a9d11ccee1037d4
+
+Contract address: https://mumbai.polygonscan.com/address/0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6
+
+Transaction details written to: /Users/ming/src/HH/muzatoken-faucet/deployments/mumbai_deployment.json
+```
+
+## verification on the same address for both mumbai and goerli networks
+
+### mumbai
+
+```shell
+$ npx hardhat verify --contract contracts/MuzaToken.sol:MuzaToken 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6  1000000000000000000000 --network mumbai
+
+Generating typings for: 1 artifacts in dir: typechain-types for target: ethers-v5
+Successfully generated 34 typings!
+Compiled 1 Solidity file successfully
+Successfully submitted source code for contract
+contracts/MuzaToken.sol:MuzaToken at 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract MuzaToken on Etherscan.
+https://mumbai.polygonscan.com/address/0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6#code
+```
+
+### goerli
+
+You need to change POLYGONSCAN_KEY in .env file to your Etherscan API key.
+
+```shell
+npx hardhat verify --contract contracts/MuzaToken.sol:MuzaToken 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6  1000000000000000000000 --network goerli
+
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+contracts/MuzaToken.sol:MuzaToken at 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract MuzaToken on Etherscan.
+https://goerli.etherscan.io/address/0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6#code
+```
+
+or to change POLYGONSCAN_KEY in CLI as follow;
+
+```shell
+$ POLYGONSCAN_KEY=J4V5S8SIF5SAUSNI3TE1VX3KDQYZDEDD71 npx hardhat verify --contract contracts/MuzaToken.sol:MuzaToken 0xEB0F3CcdE8C2cc06DaEA35b68548408711aaC4D6  1000000000000000000000 --network goerli
+Nothing to compile
+No need to generate any newer typings.
+Error in plugin @nomiclabs/hardhat-etherscan: Contract source code already verified
+
+For more info run Hardhat with --show-stack-traces
+```
