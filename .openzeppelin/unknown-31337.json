@@ -34,6 +34,29 @@
           }
         }
       }
+    },
+    "d048cca7298c769e7576f1ca403e8ac7cd7942c491258996ab206662207c47b1": {
+      "address": "0xc0Bb1650A8eA5dDF81998f17B5319afD656f4c11",
+      "txHash": "0xc86f9f03225e4bfe87cccfbe67287a90098fce3ea2a4548d9cde29c7cb076c8f",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "BoxV2",
+            "src": "contracts/BoxV2.sol:6"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
     }
   }
 }
