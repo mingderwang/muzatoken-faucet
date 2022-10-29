@@ -30,6 +30,7 @@ To get some fake MATICs from the [Mumbai facuet](https://mumbaifaucet.com/) if y
 To set defaultNetwork in your hardhat.config.ts file to 'hardhat'
 
 ```shell
+yarn
 npx hardhat help
 npx hardhat test
 REPORT_GAS=true npx hardhat test
@@ -37,8 +38,8 @@ npx hardhat run scripts/deployMuzaToken.ts
 ```
 
 test example
-```
-$ yarn test                                        [9:45:21]
+```shell
+$ yarn test                                        
 yarn run v1.22.19
 $ npx hardhat test
 
