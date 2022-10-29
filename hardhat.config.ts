@@ -3,6 +3,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "xdeployer";
 import "hardhat-gas-reporter";
+import "@openzeppelin/hardhat-upgrades";
 
 dotenv.config();
 const defaultNetwork = "hardhat";
