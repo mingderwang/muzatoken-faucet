@@ -127,6 +127,66 @@
           }
         }
       }
+    },
+    "6692e681ad4f68cdd0774fed379c2df051663a16c38332f23c003c2e44dacc10": {
+      "address": "0x2538a10b7fFb1B78c890c870FC152b10be121f04",
+      "txHash": "0xf37b2ec7866e1fa97921960a4b69224b05e4a0569bed3505dff7580623815f80",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "_value",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "AdminBoxV2",
+            "src": "contracts/AdminBoxV2.sol:8"
+          },
+          {
+            "label": "_admin",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "AdminBoxV2",
+            "src": "contracts/AdminBoxV2.sol:9"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
     }
   }
 }
