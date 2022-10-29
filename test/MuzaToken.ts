@@ -5,20 +5,22 @@ import { ethers } from "hardhat";
 
 describe("MuzaToken", function () {
   async function deployOneYearLockFixture() {
+    const totalSupply = ethers.utils.parseEther("1000");
+    console.log("testing");
     // Contracts are deployed using the first signer/account by default
     const [owner, otherAccount] = await ethers.getSigners();
-
+    console.log(owner);
     const MuzaToken = await ethers.getContractFactory("MuzaToken");
-    const muzatoken = await MuzaToken.deploy(10000000000000000);
+    const muzaToken = await MuzaToken.deploy(totalSupply);
 
-    return { muzatoken, owner, otherAccount };
+    return { muzaToken, owner, otherAccount };
   }
 
   describe("Deployment", async function () {
     it("Should set decimals to 18", async function () {
-      const { muzatoken } = await loadFixture(deployOneYearLockFixture);
+      const { muzaToken, owner } = await loadFixture(deployOneYearLockFixture);
       console.log("tested");
-      expect(await muzatoken.decimals()).to.equal(18);
+      expect(await muzaToken.owner()).to.equal(owner.address);
     });
   });
 });
