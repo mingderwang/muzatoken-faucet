@@ -255,3 +255,44 @@ Warning: A proxy admin was previously deployed on this network
 
 MyToken deployed to: 0xbf2ad38fd09F37f50f723E35dd84EEa1C282c5C9
 ```
+
+### deploy upgradeable token to mumbai
+
+```shell
+$ npx hardhat run --network mumbai scripts/deploy_mytoken.js
+
+MyToken deployed to: 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044
+```
+
+and
+
+```shell
+$ npx hardhat verify --contract contracts/MyToken.sol:MyToken 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044 0x611586817af4e77e23951524Df7D8fcEeCf5B3C8  --network mumbai
+Verifying implementation: 0xf0533fA376fa61226D42Cd9b3FEC2A8A5d1b531A
+Nothing to compile
+No need to generate any newer typings.
+Failed to verify implementation contract at 0xf0533fA376fa61226D42Cd9b3FEC2A8A5d1b531A: The constructor for contracts/MyToken.sol:MyToken has 0 parameters
+but 1 arguments were provided instead.
+Verifying proxy: 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044
+Contract at 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044 already verified.
+Linking proxy 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044 with implementation
+Failed to link proxy 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044 with its implementation. Reason: The implementation contract at 0xf0533fa376fa61226d42cd9b3fec2a8a5d1b531a does not seem to be verified. Please verify and publish the contract source before proceeding with this proxy verification.
+An unexpected error occurred:
+
+Error: Verification completed with the following errors.
+
+Error 1: Failed to verify implementation contract at 0xf0533fA376fa61226D42Cd9b3FEC2A8A5d1b531A: The constructor for contracts/MyToken.sol:MyToken has 0 parameters
+but 1 arguments were provided instead.
+
+Error 2: Failed to link proxy 0xcd969e6355F128B3AF1F11d0a72ac439Fb7DC044 with its implementation. Reason: The implementation contract at 0xf0533fa376fa61226d42cd9b3fec2a8a5d1b531a does not seem to be verified. Please verify and publish the contract source before proceeding with this proxy verification.
+
+$ npx hardhat verify --contract contracts/MyToken.sol:MyToken 0xf0533fa376fa61226d42cd9b3fec2a8a5d1b531a --network mumbai 
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+contracts/MyToken.sol:MyToken at 0xf0533fa376fa61226d42cd9b3fec2a8a5d1b531a
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract MyToken on Etherscan.
+https://mumbai.polygonscan.com/address/0xf0533fa376fa61226d42cd9b3fec2a8a5d1b531a#code
+```
