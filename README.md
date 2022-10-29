@@ -64,7 +64,7 @@ $ npx hardhat test
       ✔ Should have the symbol called MUZA (442ms)
       ✔ Should have the name called Muzha Mint Token
       ✔ Should have the totalSupply 1000000000000000000000
-      ✔ Should have the decimals as 18 1000000000000000000000
+      ✔ Should have the decimals as 18
 
 
 ·-------------------------|---------------------------|-------------|-----------------------------·
