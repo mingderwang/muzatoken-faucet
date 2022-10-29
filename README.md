@@ -241,3 +241,17 @@ Error in plugin @nomiclabs/hardhat-etherscan: Contract source code already verif
 
 For more info run Hardhat with --show-stack-traces
 ```
+
+
+## upgradeable token
+
+```shell
+$ npx hardhat run --network localhost scripts/deploy_mytoken.js
+
+Warning: A proxy admin was previously deployed on this network
+
+    This is not natively used with the current kind of proxy ('uups').
+    Changes to the admin will have no effect on this new proxy.
+
+MyToken deployed to: 0xbf2ad38fd09F37f50f723E35dd84EEa1C282c5C9
+```
