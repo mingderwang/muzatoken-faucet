@@ -13,6 +13,17 @@ cp .env.example .env
 vi .env
 ```
 
+cat .env.example
+```
+POLYGONSCAN_KEY=YHRM33PWZ3Q1GUG1YPTHCD1PN4R8APGAGQ
+MUMBAI_URL=https://polygon-mumbai.g.alchemy.com/v2/kqrbMP1SLI1kxkU-4BNN9-AVKg0Iiyy_
+POLYGON_URL=https://polygon.g.alchemy.com/v2/kqrbMP1SLI1kxkU-4BNN9-AVKg0Iiyy_
+PRIVATE_KEY=828516166b1b030645f0aa20927b3fffd5c0f341b4f36dd9016a8f628ae6e916
+```
+
+To apply above keys from [alchemy](https://www.alchemy.com/), [polygonscan](https://polygonscan.com/), and export your private key from your [metamask](https://metamask.io/) account. (You need some deplosit on this account for deploying smart contracts)
+
+To get some fake MATICs from the [Mumbai facuet](https://mumbaifaucet.com/) if you don't have any.
 
 ## test it on hardhat first
 
@@ -21,6 +32,7 @@ To set defaultNetwork in your hardhat.config.ts file to 'hardhat'
 ```shell
 npx hardhat help
 npx hardhat test
+REPORT_GAS=true npx hardhat test
 npx hardhat run scripts/deployMuzaToken.ts
 ```
 
@@ -46,3 +58,4 @@ for verification on the block explorer. Waiting for verification result...
 Successfully verified contract MuzaToken on Etherscan.
 https://mumbai.polygonscan.com/address/0x33825f022Dce205EE3554023412be6D0C809c3E7#code
 ```
+

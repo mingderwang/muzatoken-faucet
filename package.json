@@ -1,6 +1,6 @@
 {
   "name": "muzatoken-faucet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "author": "Ming-der Wang",
   "private": true,
