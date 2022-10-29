@@ -3,7 +3,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
 dotenv.config();
-const defaultNetwork = "mumbai";
+const defaultNetwork = "hardhat";
 
 const config: HardhatUserConfig = {
   defaultNetwork,

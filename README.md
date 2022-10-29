@@ -4,15 +4,29 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 
 Try running some of the following tasks:
 
+## preparation
+
+To create your .env file
+
+```shell
+cp .env.example .env
+vi .env
+```
+
+
+## test it on hardhat first
+
+To set defaultNetwork in your hardhat.config.ts file to 'hardhat'
+
 ```shell
 npx hardhat help
 npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+npx hardhat run scripts/deployMuzaToken.ts
 ```
 
 ## deploy to Polygon Mumbai
+
+To set defaultNetwork in your hardhat.config.ts file to 'mumbai'
 
 ```shell
 $ npx hardhat run scripts/deployMuzaToken.ts       
