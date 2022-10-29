@@ -36,6 +36,42 @@ REPORT_GAS=true npx hardhat test
 npx hardhat run scripts/deployMuzaToken.ts
 ```
 
+test example
+```
+$ yarn test                                        [9:45:21]
+yarn run v1.22.19
+$ npx hardhat test
+
+
+  Lock
+    Deployment
+      ✔ Should set the right unlockTime (4853ms)
+      ✔ Should set the right owner (57ms)
+      ✔ Should receive and store the funds to lock
+      ✔ Should fail if the unlockTime is not in the future (371ms)
+    Withdrawals
+      Validations
+        ✔ Should revert with the right error if called too soon
+        ✔ Should revert with the right error if called from another account (39ms)
+        ✔ Shouldn't fail if the unlockTime has arrived and the owner calls it (45ms)
+      Events
+        ✔ Should emit an event on withdrawals (48ms)
+      Transfers
+        ✔ Should transfer the funds to the owner (48ms)
+
+  MuzaToken
+    Deployment
+      ✔ Should have the symbol called MUZA (442ms)
+      ✔ Should have the name called Muzha Mint Token
+      ✔ Should have the totalSupply 1000000000000000000000
+      ✔ Should have the decimals as 18 1000000000000000000000
+
+
+  13 passing (6s)
+
+✨  Done in 11.88s.
+```
+
 ## deploy to Polygon Mumbai
 
 To set defaultNetwork in your hardhat.config.ts file to 'mumbai'

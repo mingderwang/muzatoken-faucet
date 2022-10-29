@@ -1,6 +1,6 @@
 {
   "name": "muzatoken-faucet",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "Ming-der Wang",
   "private": true,
@@ -9,7 +9,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "npx hardhat test"
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deployMuzaToken.ts"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.7.0",
