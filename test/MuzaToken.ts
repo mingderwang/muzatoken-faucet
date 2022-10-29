@@ -31,7 +31,7 @@ describe("MuzaToken", function () {
       expect(await muzaToken.totalSupply()).to.equal(totalSupply);
     });
 
-    it(`Should have the decimals as 18 ${totalSupply}`, async function () {
+    it("Should have the decimals as 18", async function () {
       const { muzaToken, owner } = await loadFixture(deployOneYearLockFixture);
       expect(await muzaToken.decimals()).to.equal(18);
     });
