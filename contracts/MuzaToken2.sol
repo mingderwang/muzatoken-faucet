@@ -22,7 +22,7 @@ contract MuzaToken2 is Initializable, ERC1155Upgradeable, AccessControlUpgradeab
     }
 
     function initialize() initializer public {
-        __ERC1155_init("https://mdid.muzamint.com");
+        __ERC1155_init("https://tokens.muzamint.com/api/item/{id}.json");
         __AccessControl_init();
         __Pausable_init();
         __ERC1155Burnable_init();
