@@ -13,7 +13,7 @@ cp .env.example .env
 vi .env
 ```
 
-cat .env.example
+cat .env.example (Don't use these example keys, you need to apply your own key and change it in .env file)
 ```
 POLYGONSCAN_KEY=YHRM33PWZ3Q1GUG1YPTHCD1PN4R8APGAGQ
 MUMBAI_URL=https://polygon-mumbai.g.alchemy.com/v2/kqrbMP1SLI1kxkU-4BNN9-AVKg0Iiyy_
