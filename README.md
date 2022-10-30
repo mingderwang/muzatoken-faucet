@@ -334,3 +334,28 @@ Successfully linked proxy to implementation.
 
 Proxy fully verified.
 ```
+
+
+## upgrade MuzaToken2.sol to MuzaToken3.sol
+
+```shell
+$ npx hardhat run scripts/upgrade_mytoken.js --network mumbai
+
+Compiled 1 Solidity file successfully
+Upgrading MuzaToken...
+MuzaToken3 upgraded
+```
+
+new address is 0x77bBc15D959C10055361A67FB75939E3523d52c4, need to verify again.
+
+```shell
+$ npx hardhat verify --contract contracts/MuzaToken3.sol:MuzaToken3 0x77bBc15D959C10055361A67FB75939E3523d52c4  --network mumbai
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+contracts/MuzaToken3.sol:MuzaToken3 at 0x77bBc15D959C10055361A67FB75939E3523d52c4
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract MuzaToken3 on Etherscan.
+https://mumbai.polygonscan.com/address/0x77bBc15D959C10055361A67FB75939E3523d52c4#code
+```

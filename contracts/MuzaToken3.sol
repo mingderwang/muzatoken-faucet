@@ -10,7 +10,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 /// @custom:security-contact mingderwang@me.com
-contract MuzaToken2 is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, PausableUpgradeable, ERC1155BurnableUpgradeable, ERC1155SupplyUpgradeable, UUPSUpgradeable {
+contract MuzaToken3 is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, PausableUpgradeable, ERC1155BurnableUpgradeable, ERC1155SupplyUpgradeable, UUPSUpgradeable {
     bytes32 public constant URI_SETTER_ROLE = keccak256("URI_SETTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
@@ -22,7 +22,7 @@ contract MuzaToken2 is Initializable, ERC1155Upgradeable, AccessControlUpgradeab
     }
 
     function initialize() initializer public {
-        __ERC1155_init("https://mdid.muzamint.com");
+        __ERC1155_init("https://erc1155token.muzamint.com/api/item/{id}.json");
         __AccessControl_init();
         __Pausable_init();
         __ERC1155Burnable_init();
