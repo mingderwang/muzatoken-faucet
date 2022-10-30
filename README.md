@@ -296,3 +296,41 @@ for verification on the block explorer. Waiting for verification result...
 Successfully verified contract MyToken on Etherscan.
 https://mumbai.polygonscan.com/address/0xf0533fa376fa61226d42cd9b3fec2a8a5d1b531a#code
 ```
+
+## ERC1155 upgradeable and verify proxy example
+
+```shell
+ming:muzatoken-faucet/ (main✗) $ npx hardhat run scripts/deploy_mytoken.js --network mumbai
+
+MyToken deployed to: 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f
+ming:muzatoken-faucet/ (main✗) $ npx hardhat verify --contract contracts/MuzaToken2.sol:MuzaToken2 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f  --network mumbai
+Verifying implementation: 0xa81AC3cbeE49dC4C13d57Dbd5Dd0b1bDb5502764
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+contracts/MuzaToken2.sol:MuzaToken2 at 0xa81AC3cbeE49dC4C13d57Dbd5Dd0b1bDb5502764
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract MuzaToken2 on Etherscan.
+https://mumbai.polygonscan.com/address/0xa81AC3cbeE49dC4C13d57Dbd5Dd0b1bDb5502764#code
+Verifying proxy: 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f
+Contract at 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f already verified.
+Linking proxy 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f with implementation
+Successfully linked proxy to implementation.
+
+Proxy fully verified.
+```
+
+```shell
+ming:muzatoken-faucet/ (main✗) $ npx hardhat verify --contract contracts/MuzaToken2.sol:MuzaToken2 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f  --network mumbai
+Verifying implementation: 0xa81AC3cbeE49dC4C13d57Dbd5Dd0b1bDb5502764
+Nothing to compile
+No need to generate any newer typings.
+Implementation 0xa81AC3cbeE49dC4C13d57Dbd5Dd0b1bDb5502764 already verified.
+Verifying proxy: 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f
+Contract at 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f already verified.
+Linking proxy 0xb2D06DF1faF16cf95155dEEea60Ca561d528d25f with implementation
+Successfully linked proxy to implementation.
+
+Proxy fully verified.
+```
